@@ -13,9 +13,12 @@ import hello.views
 # path('blog/', blog.urls, name="blog")
 #
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("", hello.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
+    path('attachments/', include('attachments.urls', namespace='attachments')),
 ]
