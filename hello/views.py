@@ -11,7 +11,7 @@ def index(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('https://google.com')
+            return redirect('https://2chap.com/admin/dashboard')
     else:
         documents = Document.objects.all()
         form = DocumentForm()
