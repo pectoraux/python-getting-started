@@ -9,7 +9,7 @@ def index(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('https://2chap.com/admin/dashboard')
+            return redirect('https://2chap.com/admin/confirmation')
     else:
         form = DocumentForm()
     return render(request, 'index.html', {
