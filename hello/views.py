@@ -5,8 +5,6 @@ from .models import Greeting, Document
 
 # Create your views here.
 def index(request):
-    # return HttpResponse('Hello from Python!')
-    print("HERE")
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
@@ -17,7 +15,6 @@ def index(request):
         form = DocumentForm()
     return render(request, 'index.html', {
         'form': form,
-        'documents':documents
     })
 
 
