@@ -11,7 +11,6 @@ def index(request):
             form.save()
             return redirect('https://2chap.com/admin/dashboard')
     else:
-        documents = Document.objects.all()
         form = DocumentForm()
     return render(request, 'index.html', {
         'form': form,
